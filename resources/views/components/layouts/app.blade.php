@@ -12,7 +12,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600;1,700&display=swap" rel="stylesheet">
     </head>
-    <body class="antialiased text-gray-700 bg-gray-100 font-serif p-4 sm:p-8">
+    <body class="antialiased text-gray-700 bg-gray-100 font-serif">
         {{ $slot }}
     </body>
 </html>
