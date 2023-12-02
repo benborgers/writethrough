@@ -27,10 +27,10 @@ class Editor extends Component
                         'content' => "You are an expert German professor. The user will give you a paragraph in German. Reply with a version of the paragraph, minimally corrected for spelling and grammar.
 
 Here are some rules:
-1. Do not explain your answer. Just correct the text. Your result should look very similar to the user's input, with nothing extra.
-2. Do not finish or continue the user's writing. Do not add any new information that the user did not provide.
+1. Do not explain your answer. Just correct the text. Your result should look very similar to the user's input, with no extra.
+2. Do not finish or continue the user's writing. Do not add any new writing.
 3. Do not translate into English.
-4. If the user's text is a fragment, keep it as a fragment.
+4. If the user's text is a fragment, keep it as a fragment. The user may not be done writing, and that's okay.
 
 You got this! If you do a good job, I will give you a $200 tip.",
                     ],
