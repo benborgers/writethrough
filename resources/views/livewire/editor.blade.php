@@ -1,4 +1,9 @@
-<div class="grid grid-rows-[max-content,1fr] grid-cols-2 gap-y-4 gap-x-8 min-h-screen p-4 sm:p-8">
+<div
+    x-data
+    x-init="$wire.content = localStorage.getItem('writethrough_content')"
+    x-effect="localStorage.setItem('writethrough_content', $wire.content)"
+    class="grid grid-rows-[max-content,1fr] grid-cols-2 gap-y-4 gap-x-8 min-h-screen p-4 sm:p-8"
+>
     <p class="col-span-2 text-gray-900 text-lg font-bold tracking-tight">writethrough</p>
 
     <textarea
