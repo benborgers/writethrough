@@ -36,8 +36,8 @@ class Editor extends Component
         $corrected = $response->json()['choices'][0]['message']['content'];
 
         $diff = DiffHelper::calculate(
-            $this->content."\n", // For some reason, the addition of a newline helps the diffing library.
-            $corrected,
+            trim($this->content)."\n", // For some reason, the addition of a newline helps the diffing library.
+            trim($corrected),
             'Combined',
             [],
             [
