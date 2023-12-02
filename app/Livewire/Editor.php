@@ -4,12 +4,12 @@ namespace App\Livewire;
 
 use Illuminate\Support\Facades\Http;
 use Jfcherng\Diff\DiffHelper;
-use Livewire\Attributes\Computed;
 use Livewire\Component;
 
 class Editor extends Component
 {
     public $content = '';
+
     public $fixed = '';
 
     public function fix()
