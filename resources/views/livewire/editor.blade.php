@@ -6,16 +6,20 @@
 >
     <div class="col-span-2">
         <p class="text-gray-900 text-lg font-bold tracking-tight">writethrough</p>
-        <p class="text-gray-400 italic">Write broken German, get right German.</p>
+        <p class="text-gray-400 italic">Write broken German, get right German. ⌘Enter to fix.</p>
     </div>
 
     <textarea
-        wire:model.live.debounce.1s="content"
+        wire:model="content"
         placeholder="Write here..."
+        x-on:keydown.meta.enter.prevent="$wire.fix()"
         class="w-full text-lg leading-relaxed p-4 border border-gray-200 rounded-2xl h-full shadow-sm focus:outline-none"
     ></textarea>
 
-    <div class="bg-white text-lg leading-relaxed whitespace-pre-wrap p-4 border border-gray-200 rounded-2xl shadow-sm"><p>{!!
-        $this->response
-    !!}</p></div>
+    <div class="relative bg-white text-lg leading-relaxed p-4 border border-gray-200 rounded-2xl shadow-sm">
+        <div wire:loading.remove>{!! $fixed !!}</div>
+        <div class="absolute top-4 left-4">
+            <div class="h-5 w-5 rounded-full border-2 border-emerald-500/30 border-t-emerald-500 animate-spin" wire:loading></div>
+        </div>
+    </div>
 </div>

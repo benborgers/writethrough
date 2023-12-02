@@ -10,12 +10,12 @@ use Livewire\Component;
 class Editor extends Component
 {
     public $content = '';
+    public $fixed = '';
 
-    #[Computed]
-    public function response()
+    public function fix()
     {
         if (str($this->content)->isEmpty()) {
-            return '';
+            $this->fixed = '';
         }
 
         $response = Http::withHeader('Authorization', 'Bearer '.env('PERPLEXITY_KEY'))
@@ -24,7 +24,7 @@ class Editor extends Component
                 'messages' => [
                     [
                         'role' => 'system',
-                        'content' => 'You are an expert German professor. The user will give you a paragraph in German. Reply with a version of the paragraph, minimally corrected for spelling and grammar. Do not write anything other than the corrected text, i.e. do not explain or prefix your answer. If the user\'s text is a fragment, keep it as a fragment.',
+                        'content' => 'You are an expert German professor. The user will give you a paragraph in German. Reply with a version of the paragraph, minimally corrected for spelling and grammar. Do not explain your answer. Do not translate into English. If the user\'s text is a fragment, keep it as a fragment.',
                     ],
                     [
                         'role' => 'user',
@@ -35,7 +35,7 @@ class Editor extends Component
 
         $corrected = $response->json()['choices'][0]['message']['content'];
 
-        $diff = DiffHelper::calculate(
+        $this->fixed = DiffHelper::calculate(
             trim($this->content)."\n", // For some reason, the addition of a newline helps the diffing library.
             trim($corrected),
             'Combined',
@@ -44,12 +44,5 @@ class Editor extends Component
                 'detailLevel' => 'word',
             ]
         );
-
-        return $diff;
-    }
-
-    public function render()
-    {
-        return view('livewire.editor');
     }
 }
