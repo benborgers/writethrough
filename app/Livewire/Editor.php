@@ -5,6 +5,7 @@ namespace App\Livewire;
 use Livewire\Component;
 use Livewire\Attributes\Computed;
 use Illuminate\Support\Facades\Http;
+use Jfcherng\Diff\DiffHelper;
 
 class Editor extends Component
 {
@@ -32,7 +33,15 @@ class Editor extends Component
                 ]
             ]);
 
-        return $response->json()['choices'][0]['message']['content'];
+        $corrected = $response->json()['choices'][0]['message']['content'];
+
+        $diff = DiffHelper::calculate(
+            $this->content . "\n", // For some reason, the addition of a newline helps the diffing library.
+            $corrected,
+            'Combined'
+        );
+
+        return $diff;
     }
 
     public function render()

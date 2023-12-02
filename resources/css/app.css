@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+ins {
+    @apply bg-emerald-200 no-underline;
+}
+
+del {
+    @apply bg-rose-200;
+}
+
+.diff-combined thead {
+    @apply hidden;
+}

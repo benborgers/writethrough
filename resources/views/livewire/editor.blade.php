@@ -11,7 +11,7 @@
         class="w-full text-lg leading-relaxed p-4 border border-gray-200 rounded-2xl h-full shadow-sm focus:outline-none"
     ></textarea>
 
-    <div class="bg-white text-lg leading-relaxed whitespace-pre-wrap p-4 border border-gray-200 rounded-2xl shadow-sm"><p>{{
+    <div class="bg-white text-lg leading-relaxed whitespace-pre-wrap p-4 border border-gray-200 rounded-2xl shadow-sm"><p>{!!
         $this->response
-    }}</p></div>
+    !!}</p></div>
 </div>
