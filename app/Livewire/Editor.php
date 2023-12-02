@@ -32,7 +32,7 @@ Here are some rules:
 3. Do not translate into English.
 4. If the user's text is a fragment, keep it as a fragment. The user may not be done writing, and that's okay.
 
-You got this! If you do a good job, I will give you a $200 tip.",
+You got this! If you do this perfectly, I will give you a $200 tip.",
                     ],
                     [
                         'role' => 'user',
