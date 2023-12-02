@@ -7,7 +7,7 @@ use Livewire\Attributes\Computed;
 
 class Editor extends Component
 {
-    public $content = 'Hey';
+    public $content = '';
 
     #[Computed]
     public function response()
