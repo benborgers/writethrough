@@ -28,7 +28,7 @@ class Editor extends Component
 
 Here are some rules:
 1. Do not explain your answer. Just correct the text. Your result should look very similar to the user's input, with nothing extra.
-2. Do not finish or continue the user's writing.
+2. Do not finish or continue the user's writing. Do not add any new information that the user did not provide.
 3. Do not translate into English.
 4. If the user's text is a fragment, keep it as a fragment.
 
