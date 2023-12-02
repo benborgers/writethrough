@@ -10,7 +10,7 @@
     </div>
 
     <textarea
-        wire:model.live.debounce.500ms="content"
+        wire:model.live.debounce.1s="content"
         placeholder="Write here..."
         class="w-full text-lg leading-relaxed p-4 border border-gray-200 rounded-2xl h-full shadow-sm focus:outline-none"
     ></textarea>
