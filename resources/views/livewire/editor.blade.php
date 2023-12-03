@@ -13,7 +13,7 @@
         wire:model="content"
         placeholder="Write here..."
         x-on:keydown.meta.enter.prevent="$wire.fix()"
-        class="w-full text-lg leading-relaxed p-4 border border-gray-200 rounded-2xl h-full shadow-sm focus:outline-none"
+        class="w-full text-lg leading-relaxed p-4 border border-gray-200 rounded-2xl h-full shadow-sm focus:outline-none resize-none"
     ></textarea>
 
     <div class="relative bg-white text-lg leading-relaxed p-4 border border-gray-200 rounded-2xl shadow-sm">
