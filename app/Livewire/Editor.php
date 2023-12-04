@@ -27,6 +27,7 @@ class Editor extends Component
         $stream = $client->chat()->createStreamed(
             [
                 'model' => 'gpt-3.5-turbo',
+                'max_tokens' => 1000,
                 'messages' => [
                     [
                         'role' => 'user',
