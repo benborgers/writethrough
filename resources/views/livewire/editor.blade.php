@@ -5,7 +5,12 @@
     class="grid grid-rows-[max-content,1fr] grid-cols-2 gap-y-4 gap-x-8 min-h-screen p-4 sm:p-8"
 >
     <div class="col-span-2">
-        <p class="text-gray-900 text-lg font-bold tracking-tight">writethrough</p>
+        <p class="text-gray-900 text-lg font-bold tracking-tight">
+            writethrough
+            @env('local')
+                <span class="text-rose-600">dev</span>
+            @endenv
+        </p>
         <p class="text-gray-400 italic">Write broken German, get right German. ⌘Enter to fix.</p>
     </div>
 
