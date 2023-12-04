@@ -9,7 +9,6 @@ use OpenAI;
 class Editor extends Component
 {
     public $content = '';
-
     public $fixed = '';
 
     public function fix()
@@ -49,7 +48,7 @@ Do not explain your answer. DO NOT invent more writing and append it. Only proof
             $this->stream(to: 'fixed', content: $this->fixed, replace: true);
         }
 
-        $this->fixed = DiffHelper::calculate(
+        $diff = DiffHelper::calculate(
             trim($lastParagraph)."\n", // For some reason, the addition of a newline helps the diffing library.
             trim($this->fixed),
             'Combined',
@@ -58,5 +57,8 @@ Do not explain your answer. DO NOT invent more writing and append it. Only proof
                 'detailLevel' => 'word',
             ]
         );
+
+        // This helps double-clicking to select replaced words and pasting them into your writing.
+        $this->fixed = str($diff)->replace('</del><ins>', '</del>&ZeroWidthSpace;<ins>');
     }
 }
