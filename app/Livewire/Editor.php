@@ -20,7 +20,7 @@ class Editor extends Component
             return;
         }
 
-        $lastParagraph = str($this->content)->after("\n");
+        $lastParagraph = str($this->content)->afterLast("\n");
 
         $client = OpenAI::client(env('OPENAI_KEY'));
 
