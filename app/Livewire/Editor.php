@@ -53,8 +53,8 @@ You got this! If you follow the rules perfectly, I will give you a $200 tip.',
         }
 
         $this->fixed = DiffHelper::calculate(
-            trim($this->fixed)."\n", // For some reason, the addition of a newline helps the diffing library.
-            trim($this->content),
+            trim($this->content)."\n", // For some reason, the addition of a newline helps the diffing library.
+            trim($this->fixed),
             'Combined',
             [],
             [
