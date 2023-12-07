@@ -19,7 +19,11 @@
                     <span class="text-rose-600">dev</span>
                 @endenv
             </p>
-            <p class="text-gray-400 italic">Write broken {{ $language }}, get right {{ $language }}. ⌘Enter to fix.</p>
+            <p class="text-gray-400 italic">
+                Write broken {{ $language }}, get right {{ $language }}.
+                ⌘Enter to fix.
+                Made by <a href="https://ben.page" target="_blank" class="underline decoration-gray-300">Ben Borgers</a>.
+            </p>
         </div>
         <div>
             <p class="text-right text-sm font-medium text-gray-500">Language</p>
