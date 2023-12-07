@@ -39,12 +39,19 @@
         </div>
     </div>
 
-    <textarea
-        wire:model="content"
-        placeholder="Write here..."
-        x-on:keydown.meta.enter.prevent="$wire.fix()"
-        class="w-full text-lg leading-relaxed p-4 border border-gray-200 rounded-2xl h-full shadow-sm focus:outline-none resize-none placeholder-gray-400 focus:border-gray-200 focus:ring-0"
-    ></textarea>
+    <div>
+        <textarea
+            wire:model="content"
+            placeholder="Write here..."
+            x-on:keydown.meta.enter.prevent="$wire.fix()"
+            class="w-full text-lg leading-relaxed p-4 border border-gray-200 rounded-2xl h-full shadow-sm focus:outline-none resize-none placeholder-gray-400 focus:border-gray-200 focus:ring-0"
+        ></textarea>
+
+        <p class="text-sm font-medium text-gray-400 italic text-right -mt-1.5 mr-0.5">
+            <span x-text="$wire.content.trim() === '' ? 0 : $wire.content.trim().split(/ +/g).length"></span>
+            words
+        </p>
+    </div>
 
     <div class="relative bg-white text-lg leading-relaxed p-4 border border-gray-200 rounded-2xl shadow-sm overflow-scroll">
         <div wire:stream="fixed">{!! $fixed !!}</div>
